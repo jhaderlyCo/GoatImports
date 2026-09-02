@@ -1,0 +1,632 @@
+/* --- VARIABLES --- */
+:root {
+    --bg-color: #0d0d0d;
+    --text-color: #ffffff;
+    --gold-color: #d4af37;
+    --gold-hover: #f1c40f;
+    --card-bg: #1a1a1a;
+    --nav-bg: rgba(13, 13, 13, 0.95);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid #333;
+    z-index: 999;
+    padding: 1rem 0;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+
+
+.logo span {
+    color: var(--gold-color);
+    margin-left: 5px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold-color);
+}
+
+
+/* --- LOGO EN BARRA DE NAVEGACIÓN --- */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Círculo dorado donde irá tu logo */
+.logo-img-placeholder {
+    width: 45px;
+    height: 45px;
+    background-color: var(--gold-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* --- PORTADA DIVIDIDA EN DOS COLUMNAS --- */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(13,13,13,1) 100%);
+    padding: 0 2rem;
+    margin-top: 60px;
+}
+
+.hero-container-split {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Mitad texto, mitad imágenes */
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--gold-color);
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* --- EFECTO ABANICO (Animación y Hover) --- */
+.hero-images {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 450px;
+    margin: 0 auto;
+}
+
+.fan-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #222;
+    border: 2px solid var(--gold-color);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    /* Transición súper suave para cuando el ratón entra y sale */
+    transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 1s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    opacity: 0; 
+    transform: translateY(100px) rotate(0deg); /* Escondido al inicio */
+    cursor: pointer;
+}
+
+.fan-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen llene toda la carta sin deformarse */
+    border-radius: 18px; /* Mantiene las esquinas redondeadas bonitas */
+}
+
+/* Animación continua de levitación */
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Cuando se activa con JS: Posiciones iniciales del abanico y se enciende la levitación */
+.hero-images.animate {
+    animation: flotar 4s ease-in-out infinite; /* Levitación suave infinita */
+}
+
+.hero-images.animate .img-center {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+.hero-images.animate .img-left {
+    transform: translateX(-40%) translateY(30px) rotate(-15deg) scale(0.9);
+    opacity: 0.6;
+    z-index: 2;
+}
+.hero-images.animate .img-right {
+    transform: translateX(40%) translateY(30px) rotate(15deg) scale(0.9);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* --- EFECTOS HOVER (Al pasar el ratón) --- */
+
+/* 1. Al pasar el ratón por el contenedor, el abanico se abre un poco más */
+.hero-images.animate:hover .img-left {
+    transform: translateX(-55%) translateY(40px) rotate(-25deg) scale(0.9);
+}
+.hero-images.animate:hover .img-right {
+    transform: translateX(55%) translateY(40px) rotate(25deg) scale(0.9);
+}
+
+/* 2. Al pasar el ratón sobre una carta ESPECÍFICA: Salta al frente y brilla */
+.hero-images.animate .fan-img:hover {
+    transform: translateY(-20px) scale(1.05) !important; /* El important fuerza a la carta a moverse de su lugar */
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.5); /* Brillo dorado */
+    border-color: #fff; /* Borde blanco para resaltar más */
+    opacity: 1 !important; /* Se aclara por completo */
+    z-index: 10 !important; /* Se pone por encima de todas las demás */
+}
+
+/* Responsive para celulares */
+@media (max-width: 768px) {
+    .hero-container-split {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .hero-images {
+        height: 350px;
+        max-width: 250px;
+    }
+}
+
+/* Cuando Javascript le añade la clase "animate", se abren como cartas */
+.hero-images.animate .img-center {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+    z-index: 3;
+}
+.hero-images.animate .img-left {
+    transform: translateX(-40%) translateY(30px) rotate(-15deg) scale(0.9);
+    opacity: 0.6;
+    z-index: 2;
+}
+.hero-images.animate .img-right {
+    transform: translateX(40%) translateY(30px) rotate(15deg) scale(0.9);
+    opacity: 0.6;
+    z-index: 1;
+}
+
+/* Responsive para que se vea bien en celulares */
+@media (max-width: 768px) {
+    .hero-container-split {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .hero-images {
+        height: 350px;
+        max-width: 250px;
+    }
+}
+
+.btn-primary {
+    background-color: var(--gold-color);
+    color: #000;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    background-color: var(--gold-hover);
+    transform: scale(1.05);
+}
+
+/* --- TÍTULOS DE SECCIÓN --- */
+.section-title {
+    text-align: center;
+    color: var(--gold-color);
+    font-size: 2.5rem;
+    margin: 4rem 0 3rem 0;
+    text-transform: uppercase;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+}
+
+
+/* --- SECCIÓN DE BENEFICIOS ULTRA PRO --- */
+.features-section {
+    padding: 6rem 2rem;
+    background-color: transparent; /* Para que se mezcle con tu espacio negro puro */
+    position: relative;
+}
+
+.features-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    text-align: center;
+}
+
+.feature-card {
+    position: relative;
+    padding: 3rem 2rem;
+    background: rgba(26, 26, 26, 0.6); /* Efecto vidrio semitransparente */
+    backdrop-filter: blur(12px); /* Desenfoque elegante estilo Apple */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: hidden;
+}
+
+/* Línea de brillo dorado sutil en el borde superior de la tarjeta */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold-color), transparent);
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+/* EFECTO HOVER PRO: La tarjeta flota hacia arriba, brilla y el borde se vuelve dorado */
+.feature-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--gold-color);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15), 
+                inset 0 0 20px rgba(212, 175, 55, 0.05);
+    background: rgba(35, 35, 35, 0.8);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+/* Animación de los íconos (flotan al pasar el mouse) */
+.feature-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.15) rotate(5deg); /* El ícono crece y gira un poquito con elegancia */
+}
+
+.feature-card h3 {
+    color: var(--gold-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.feature-card p {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- CATÁLOGO --- */
+.catalog-section {
+    padding: 2rem 0 6rem 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* --- TARJETAS DE IPHONE ULTRA PRO --- */
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    /* Transición fluida para todas las animaciones */
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                box-shadow 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), 
+                border-color 0.4s ease;
+    
+    /* Estado inicial para la animación de entrada al hacer scroll */
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+/* Línea de luz dorada superior que da un toque lujoso */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold-color), transparent);
+    transition: left 0.6s ease;
+}
+
+/* Clase que activa el scroll */
+.card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- EFECTO PRO AL PASAR EL CURSOR (HOVER) --- */
+.card:hover {
+    transform: translateY(-12px) scale(1.02); /* Se eleva y crece un poquito */
+    box-shadow: 0 22px 40px rgba(212, 175, 55, 0.25), 
+                0 0 20px rgba(212, 175, 55, 0.1); /* Resplandor dorado envolvente */
+    border-color: var(--gold-color);
+}
+
+.card:hover::before {
+    left: 100%; /* Hace que una ráfaga de luz dorada cruce la tarjeta de lado a lado */
+}
+
+/* --- ANIMACIÓN SÚPER PRO AL PRESIONAR (CLICK) --- */
+.card:active {
+    transform: translateY(-4px) scale(0.98); /* Efecto de "clic táctil" hundiéndose ligeramente */
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Efecto de zoom y brillo suave en la imagen cuando pasas el cursor por la tarjeta */
+.card:hover .img-placeholder img {
+    transform: scale(1.06);
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); /* Movimiento suave de la foto */
+}
+
+/* --- CAJA DE IMAGEN CUADRADA --- */
+.img-placeholder {
+    width: 100%;
+    aspect-ratio:1 / 1; 
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-size: 0.9rem;
+    overflow: hidden;
+}
+
+.img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.capacity {
+    color: #aaaaaa;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    color: var(--gold-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.btn-comprar {
+    background-color: transparent;
+    color: var(--gold-color);
+    border: 2px solid var(--gold-color);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-comprar:hover {
+    background-color: var(--gold-color);
+    color: #000;
+}
+
+/* --- ANIMACIONES GLOBALES JS --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- BOTÓN FLOTANTE WHATSAPP --- */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+    text-decoration: none;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* --- FOOTER (PIE DE PÁGINA MEJORADO) --- */
+.footer {
+    background-color: #050505;
+    border-top: 1px solid #333;
+    padding: 3rem 2rem 1rem 2rem;
+    color: #aaa;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-col h3 {
+    color: var(--gold-color);
+    margin-bottom: 1rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-col ul li a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: var(--gold-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+}
+
+
+/* --- FONDO ESPACIAL NEGRO PURO --- */
+#stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    pointer-events: none; 
+    overflow: hidden;
+    background-color: #000000; /* Negro puro absoluto */
+}
+
+.star {
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: brillar linear infinite;
+}
+
+@keyframes brillar {
+    0% { opacity: 0.2; transform: translateY(0px); }
+    50% { opacity: 1; transform: translateY(-30px); }
+    100% { opacity: 0.2; transform: translateY(-60px); }
+} 
+
+
+/* Efecto de parpadeo y desplazamiento sutil */
+@keyframes brillar {
+    0% { opacity: 0.2; transform: translateY(0px); }
+    50% { opacity: 1; transform: translateY(-30px); }
+    100% { opacity: 0.2; transform: translateY(-60px); }
+}

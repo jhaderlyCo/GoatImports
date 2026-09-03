@@ -291,17 +291,19 @@ body {
         margin: 0 auto; 
     }
 
-    /* 3. ¡EL ARREGLO DE LAS TARJETAS DESCENTRADAS! */
+    /* 3. ¡ARREGLO DEFINITIVO DE LAS TARJETAS DESCENTRADAS! */
     .grid {
-        grid-template-columns: 1fr; /* Obliga a usar una sola columna en el medio */
-        justify-items: center; /* Centra el contenido en esa columna */
+        display: flex !important; /* Cambiamos a Flexbox para un centrado perfecto */
+        flex-direction: column !important; /* Apila las tarjetas una debajo de otra */
+        align-items: center !important; /* Centra TODO horizontalmente */
         padding: 0 1rem;
+        gap: 2rem;
     }
 
     .card {
         width: 100%;
-        max-width: 320px; /* Fija un tamaño ideal para celulares */
-        margin: 0 auto; /* Centrado perfecto en la pantalla */
+        max-width: 320px; 
+        margin: 0 auto !important; /* Forzamos el margen automático a los lados */
     }
 }
 

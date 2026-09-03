@@ -242,16 +242,44 @@ body {
     z-index: 1;
 }
 
-/* Responsive para que se vea bien en celulares */
+/* --- ADAPTACIÓN PARA CELULARES (DISEÑO RESPONSIVO) --- */
 @media (max-width: 768px) {
-    .hero-container-split {
-        grid-template-columns: 1fr;
-        text-align: center;
-        margin-top: 50px;
+   
+    .nav-container {
+        flex-direction: column; 
+        padding: 1rem;
+        gap: 1rem;
     }
+
+    .nav-links {
+        gap: 1rem; 
+    }
+
+    .hero {
+        padding-top: 8rem; 
+        margin-top: 0;
+        align-items: flex-start; 
+    }
+
+    .hero-container-split {
+        grid-template-columns: 1fr; 
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; 
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    
     .hero-images {
         height: 350px;
         max-width: 250px;
+        margin-top: 2rem; 
     }
 }
 

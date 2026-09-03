@@ -286,9 +286,9 @@ body {
     }
 
     .hero-images {
-        height: 220px; /* Abanico un poco más compacto en móviles */
-        max-width: 160px;
-        margin: 0 auto; /* Centrado forzado */
+        height: 160px; 
+        max-width: 100px;
+        margin: 0 auto; 
     }
 
     /* 3. ¡EL ARREGLO DE LAS TARJETAS DESCENTRADAS! */

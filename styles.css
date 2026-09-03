@@ -244,42 +244,61 @@ body {
 
 /* --- ADAPTACIÓN PARA CELULARES (DISEÑO RESPONSIVO) --- */
 @media (max-width: 768px) {
-   
+    /* 1. Menú de Navegación */
     .nav-container {
-        flex-direction: column; 
+        flex-direction: column;
         padding: 1rem;
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
     .nav-links {
-        gap: 1rem; 
+        gap: 1rem;
+        flex-wrap: wrap; /* Evita que los enlaces se salgan de la pantalla */
+        justify-content: center;
     }
 
+    /* 2. Portada (Hero Section) Ajustada */
     .hero {
-        padding-top: 8rem; 
-        margin-top: 0;
-        align-items: flex-start; 
+        padding-top: 8rem; /* Da espacio para que el menú no tape el texto */
+        min-height: 100vh;
+        height: auto;
     }
 
     .hero-container-split {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
+        gap: 1.5rem; /* Reduce el espacio entre el texto y el abanico */
     }
 
     .hero-content h1 {
-        font-size: 2.5rem; 
+        font-size: 2rem; /* Achicamos más el título para que encaje perfecto */
+        line-height: 1.2; /* Junta un poco las líneas de texto */
+        margin-bottom: 0.5rem;
     }
     
     .hero-content p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem; /* Margen a los lados para que el texto no toque los bordes */
     }
 
-    
     .hero-images {
-        height: 350px;
-        max-width: 250px;
-        margin-top: 2rem; 
+        height: 300px; /* Abanico un poco más compacto en móviles */
+        max-width: 220px;
+        margin: 0 auto; /* Centrado forzado */
+    }
+
+    /* 3. ¡EL ARREGLO DE LAS TARJETAS DESCENTRADAS! */
+    .grid {
+        grid-template-columns: 1fr; /* Obliga a usar una sola columna en el medio */
+        justify-items: center; /* Centra el contenido en esa columna */
+        padding: 0 1rem;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px; /* Fija un tamaño ideal para celulares */
+        margin: 0 auto; /* Centrado perfecto en la pantalla */
     }
 }
 

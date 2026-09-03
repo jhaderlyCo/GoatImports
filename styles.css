@@ -286,8 +286,8 @@ body {
     }
 
     .hero-images {
-        height: 300px; /* Abanico un poco más compacto en móviles */
-        max-width: 220px;
+        height: 220px; /* Abanico un poco más compacto en móviles */
+        max-width: 160px;
         margin: 0 auto; /* Centrado forzado */
     }
 

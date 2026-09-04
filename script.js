@@ -70,3 +70,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+// --- FUNCIONES PARA EL CATÁLOGO DINÁMICO ---
+function showSeries(seriesId) {
+    // 1. Ocultar el menú de series principal
+    document.getElementById('series-menu').style.display = 'none';
+    
+    // 2. Mostrar la sección de modelos y el botón de volver
+    document.getElementById('models-view').style.display = 'block';
+    
+    // 3. Ocultar todos los contenedores de series primero
+    const allSeries = document.querySelectorAll('.series-container');
+    allSeries.forEach(s => s.style.display = 'none');
+    
+    // 4. Mostrar ÚNICAMENTE la serie que el usuario eligió
+    document.getElementById(seriesId).style.display = 'block';
+
+    // 5. Mover la pantalla arriba del catálogo suavemente
+    document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+}
+
+function hideModels() {
+    // 1. Ocultar la sección de modelos
+    document.getElementById('models-view').style.display = 'none';
+    
+    // 2. Volver a mostrar el menú principal de series (quitamos el display para que CSS tome el control)
+    document.getElementById('series-menu').style.display = '';
+    
+    // 3. Mover la pantalla arriba del catálogo
+    document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
+}

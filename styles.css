@@ -7,6 +7,7 @@
     --card-bg: #1a1a1a;
     --nav-bg: rgba(13, 13, 13, 0.95);
 }
+
 /* --- REGLA UNIVERSAL PARA EVITAR DESBORDES --- */
 * {
     box-sizing: border-box;
@@ -20,7 +21,6 @@ html, body {
     overflow-x: hidden; /* Bloquea el movimiento horizontal */
     position: relative;
 }
-
 
 body {
     background-color: var(--bg-color);
@@ -227,7 +227,6 @@ body {
 }
 
 
-
 /* Cuando Javascript le añade la clase "animate", se abren como cartas */
 .hero-images.animate .img-center {
     transform: translateY(0) rotate(0deg) scale(1);
@@ -243,6 +242,105 @@ body {
     transform: translateX(40%) translateY(30px) rotate(15deg) scale(0.9);
     opacity: 0.6;
     z-index: 1;
+}
+
+
+/* --- SECCIÓN DE REFERENCIAS (CINTURÓN 3D) --- */
+.references-section {
+    padding: 6rem 0;
+    overflow: hidden; /* Evita que el 3D estire la pantalla a los lados */
+    background-color: transparent;
+}
+
+.carousel-container {
+    perspective: 1200px; /* Crea la profundidad del 3D */
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.carousel-3d {
+    width: 220px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d; /* Le dice al navegador que los hijos viven en 3D */
+    animation: girar-cinturon 20s linear infinite; /* Gira eternamente */
+}
+
+/* El cinturón se pausa cuando el usuario pone el mouse encima para ver bien la foto */
+.carousel-3d:hover {
+    animation-play-state: paused;
+}
+
+.carousel-item {
+    position: absolute;
+    width: 220px;
+    height: 300px;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 2px solid var(--gold-color);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+    background-color: #111;
+}
+
+/* Distribuimos las 6 imágenes en círculo (360° / 6 = 60°). 
+   translateZ empuja las fotos hacia afuera creando el radio del cinturón */
+.carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(320px); }
+.carousel-item:nth-child(2) { transform: rotateY(60deg) translateZ(320px); }
+.carousel-item:nth-child(3) { transform: rotateY(120deg) translateZ(320px); }
+.carousel-item:nth-child(4) { transform: rotateY(180deg) translateZ(320px); }
+.carousel-item:nth-child(5) { transform: rotateY(240deg) translateZ(320px); }
+.carousel-item:nth-child(6) { transform: rotateY(300deg) translateZ(320px); }
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes girar-cinturon {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+
+/* --- NAVEGACIÓN DEL CATÁLOGO --- */
+.series-card {
+    cursor: pointer;
+}
+
+.series-card:hover {
+    border-color: #fff;
+}
+
+.btn-back {
+    background-color: transparent;
+    color: var(--gold-color);
+    border: 1px solid var(--gold-color);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 3rem;
+    display: inline-block;
+}
+
+.btn-back:hover {
+    background-color: var(--gold-color);
+    color: #000;
+}
+
+/* --- FORZAR VISIBILIDAD DE TARJETAS EN CATÁLOGO DINÁMICO --- */
+.series-container .card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 /* --- ADAPTACIÓN PARA CELULARES (DISEÑO RESPONSIVO) --- */
@@ -286,9 +384,9 @@ body {
     }
 
     .hero-images {
-        height: 220px; 
+        height: 220px; /* Abanico un poco más compacto en móviles */
         max-width: 160px;
-        margin: 0 auto; 
+        margin: 0 auto; /* Centrado forzado */
     }
 
     /* 3. ¡ARREGLO DEFINITIVO DE LAS TARJETAS DESCENTRADAS! */
@@ -305,6 +403,29 @@ body {
         max-width: 320px; 
         margin: 0 auto !important; /* Forzamos el margen automático a los lados */
     }
+
+    /* 4. Ajuste del Cinturón 3D para Celulares */
+    .carousel-container {
+        height: 250px;
+    }
+    
+    .carousel-3d {
+        width: 140px;
+        height: 200px;
+    }
+    
+    .carousel-item {
+        width: 140px;
+        height: 200px;
+    }
+    
+    /* Encogemos el radio del cinturón a 160px para que gire perfecto sin salirse */
+    .carousel-item:nth-child(1) { transform: rotateY(0deg) translateZ(160px); }
+    .carousel-item:nth-child(2) { transform: rotateY(60deg) translateZ(160px); }
+    .carousel-item:nth-child(3) { transform: rotateY(120deg) translateZ(160px); }
+    .carousel-item:nth-child(4) { transform: rotateY(180deg) translateZ(160px); }
+    .carousel-item:nth-child(5) { transform: rotateY(240deg) translateZ(160px); }
+    .carousel-item:nth-child(6) { transform: rotateY(300deg) translateZ(160px); }
 }
 
 .btn-primary {
@@ -495,11 +616,13 @@ body {
 }
 
 /* Efecto de zoom y brillo suave en la imagen cuando pasas el cursor por la tarjeta */
-.card:hover .img-placeholder img {
+.card:hover .img-placeholder img,
+.card:hover .img-placeholder video {
     transform: scale(1.06);
 }
 
-.img-placeholder img {
+.img-placeholder img,
+.img-placeholder video {
     width: 100%;
     height: auto;
     display: block;
@@ -510,7 +633,7 @@ body {
 .img-placeholder {
     width: 100%;
     aspect-ratio:1 / 1; 
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 8px;
     margin-bottom: 1.5rem;
     display: flex;

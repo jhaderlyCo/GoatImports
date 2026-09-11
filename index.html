@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOAT IMPORTS PERÚ | Tu Nuevo iPhone</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-rounded/css/uicons-thin-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-thin-straight/css/uicons-thin-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-thin-straight/css/uicons-thin-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
+</head>
+<body>
+    <div id="stars-container"></div>
+
+    <!-- BARRA DE NAVEGACIÓN ACTUALIZADA -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- AQUI AGREGAMOS EL LOGO -->
+            <div class="logo">
+                <div class="logo-img-placeholder">
+                   <img src="img/logo.jpeg" alt="Logo GOAT">
+                </div>
+                GOAT<span>IMPORTS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#beneficios">Nosotros</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#referencias">Referencias</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN PORTADA (HERO) CON ABANICO -->
+    <section id="inicio" class="hero">
+        <div class="hero-container-split">
+            <div class="hero-content">
+
+                <h1>
+                    <span id="typewriter"></span><span class="cursor">|</span>
+                </h1>
+
+                <p>Descubre los mejores equipos Apple con total garantía y seguridad. Traemos lo mejor para ti.</p>
+                <a href="#catalogo" class="btn-primary">Ver Catálogo</a>
+            </div>
+            
+            <!-- CONTENEDOR DEL ABANICO DE IPHONES -->
+            <div class="hero-images">
+                <!-- Imagen Izquierda -->
+                <div class="fan-img img-left"><img src="img/logo1.jpg"></div>
+                <!-- Imagen Central (Principal) -->
+                <div class="fan-img img-center"><img src="img/logo.jpeg"></div>
+                <!-- Imagen Derecha -->
+                <div class="fan-img img-right"><img src="img/logo2.jpg"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN POR QUÉ ELEGIRNOS -->
+    <section id="beneficios" class="features-section">
+        <h2 class="section-title">¿Por qué comprar con nosotros?</h2>
+        <div class="features-grid">
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon"><i class="fi fi-bs-shield-check"></i></div>
+                <h3>Garantía Asegurada</h3>
+                <p>Todos nuestros equipos cuentan con garantía para tu total tranquilidad.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon"><i class="fi fi-bs-apple-whole"></i></div>
+                <h3>100% Originales</h3>
+                <p>Equipos Apple nuevos y sellados, directos de fábrica.</p>
+            </div>
+            <div class="feature-card animate-on-scroll">
+                <div class="feature-icon"><i class="fi fi-bs-truck-moving"></i></div>
+                <h3>Envíos Seguros</h3>
+                <p>Llegamos a donde estés con envíos rápidos y protegidos.</p>
+            </div>
+        </div>
+    </section>
+
+  <!-- SECCIÓN CATÁLOGO DINÁMICO -->
+    <section id="catalogo" class="catalog-section">
+        <h2 class="section-title">Nuestro Catálogo Exclusivo</h2>
+        
+        <div class="container">
+            <!-- VISTA 1: MENÚ PRINCIPAL DE SERIES -->
+            <div id="series-menu" class="grid">
+                <div class="card series-card animate-on-scroll" onclick="showSeries('serie-13')">
+                    <div class="img-placeholder"><video src="img/video_13.mp4" autoplay loop muted playsinline></video></div>
+                    <h3>Serie 13</h3><div class="price" style="font-size: 1.2rem;">Ver Modelos</div>
+                </div>
+                <div class="card series-card animate-on-scroll" onclick="showSeries('serie-14')">
+                    <div class="img-placeholder"><video src="img/video_14.mp4" autoplay loop muted playsinline></video></div>
+                    <h3>Serie 14</h3><div class="price" style="font-size: 1.2rem;">Ver Modelos</div>
+                </div>
+                <div class="card series-card animate-on-scroll" onclick="showSeries('serie-15')">
+                    <div class="img-placeholder"><video src="img/video_15.mp4" autoplay loop muted playsinline></video></div>
+                    <h3>Serie 15</h3><div class="price" style="font-size: 1.2rem;">Ver Modelos</div>
+                </div>
+                <div class="card series-card animate-on-scroll" onclick="showSeries('serie-16')">
+                    <div class="img-placeholder"><video src="img/video_16.mp4" autoplay loop muted playsinline></video></div>
+                    <h3>Serie 16</h3><div class="price" style="font-size: 1.2rem;">Ver Modelos</div>
+                </div>
+                <div class="card series-card animate-on-scroll" onclick="showSeries('serie-17')">
+                    <div class="img-placeholder"><video src="img/video_17.mp4" autoplay loop muted playsinline></video></div>
+                    <h3>Serie 17</h3><div class="price" style="font-size: 1.2rem;">Ver Modelos</div>
+                </div>
+
+                <div class="card series-card animate-on-scroll" onclick="showSeries('serie-18')">
+                    <div class="img-placeholder"><video src="img/video_18.mp4" autoplay loop muted playsinline></video></div>
+                    <h3>Serie 18</h3><div class="price" style="font-size: 1.2rem;">Ver Modelos</div>
+                </div>
+
+            </div>
+
+            <!-- VISTA 2: MODELOS DETALLADOS (Ocultos al inicio) -->
+            <div id="models-view" style="display: none; text-align: center;">
+                <button class="btn-back" onclick="hideModels()">⬅ Volver a las Series</button>
+
+
+
+                <!-- ================== SERIE 13 ================== -->
+                <div id="serie-13" class="series-container" style="display: none;">
+                    <h2 class="section-subtitle" style="margin-bottom: 2rem;">SERIE 13 DE APPLE</h2>
+                    <div class="grid">
+                        
+                        <!-- iPHONE 13 NORMAL (Abre modal-13) -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/13_colores.png" alt="iPhone 13"></div>
+                            <h3>iPhone 13</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/1686.7</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-13')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 13 de 128GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/13_colores.png" alt="iPhone 13"></div>
+                            <h3>iPhone 13</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/1886.7</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-13')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 13 de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 13 PRO (Abre modal-13-pro) -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/13pro_colores.png" alt="iPhone 13 Pro"></div>
+                            <h3>iPhone 13 Pro</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/1990</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-13-pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 13 Pro de 128GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/13pro_colores.png" alt="iPhone 13 Pro"></div>
+                            <h3>iPhone 13 Pro</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/2060</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-13-pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 13 Pro de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 13 PRO MAX (Abre modal-13-promax) -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/13pro_colores.png" alt="iPhone 13 Pro Max"></div>
+                            <h3>iPhone 13 Pro max</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/2340</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-13-promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 13 Pro max de 128GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/13pro_colores.png" alt="iPhone 13 Pro Max"></div>
+                            <h3>iPhone 13 Pro max</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/2380</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-13-promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 13 Pro max de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- ================== SERIE 14 ================== -->
+                <div id="serie-14" class="series-container" style="display: none;">
+                    <h2 class="section-subtitle" style="margin-bottom: 2rem;">SERIE 14 DE APPLE</h2>
+                    <div class="grid">
+                        
+                        <!-- iPHONE 14 NORMAL -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/14_colores.png" alt="iPhone 14"></div>
+                            <h3>iPhone 14</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/1872.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-14')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 14 de 128GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/14_colores.png" alt="iPhone 14"></div>
+                            <h3>iPhone 14</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/1906.3</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-14')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 14 de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 14 PRO -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/14pro_colores.png" alt="iPhone 14 Pro"></div>
+                            <h3>iPhone 14 Pro</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/2283.3</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-14-pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 14 Pro de 128GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/14pro_colores.png" alt="iPhone 14 Pro"></div>
+                            <h3>iPhone 14 Pro</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/2362.5</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-14-pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 14 Pro de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 14 PRO MAX -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/14pro_colores.png" alt="iPhone 14 Pro Max"></div>
+                            <h3>iPhone 14 Pro Max</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/2561</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-14-promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 14 Pro Max de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/14pro_colores.png" alt="iPhone 14 Pro Max"></div>
+                            <h3>iPhone 14 Pro Max</h3>
+                            <div class="capacity">512GB</div>
+                            <div class="price">S/2846.5</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-14-promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 14 Pro Max de 512GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- ================== SERIE 15 ================== -->
+                <div id="serie-15" class="series-container" style="display: none;">
+                    <h2 class="section-subtitle" style="margin-bottom: 2rem;">SERIE 15 DE APPLE</h2>
+                    <div class="grid">
+                        
+                        <!-- iPHONE 15 NORMAL -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/15_colores.png" alt="iPhone 15"></div>
+                            <h3>iPhone 15</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/2000.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-15')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 15 de 128GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/15_colores.png" alt="iPhone 15"></div>
+                            <h3>iPhone 15 </h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/2444.5</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-15')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 15 Pro de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 15 PRO -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/15pro_colores.png" alt="iPhone 15 Pro"></div>
+                            <h3>iPhone 15 Pro</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/2842.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-15pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 15 Pro de 512GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/15pro_colores.png" alt="iPhone 15 Pro"></div>
+                            <h3>iPhone 15 Pro</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/2900.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-15pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 15 Pro de 1TB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 15 PRO MAX -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/15pro_colores.png" alt="iPhone 15 Pro Max"></div>
+                            <h3>iPhone 15 Pro Max</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/3400</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-15promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 15 Pro Max de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/15pro_colores.png" alt="iPhone 15 Pro Max"></div>
+                            <h3>iPhone 15 Pro Max</h3>
+                            <div class="capacity">512GB</div>
+                            <div class="price">S/3645.5</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-15promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 15 Pro Max de 512GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+                <!-- ================== SERIE 16 ================== -->
+                <div id="serie-16" class="series-container" style="display: none;">
+                    <h2 class="section-subtitle" style="margin-bottom: 2rem;">SERIE 16 DE APPLE</h2>
+                    <div class="grid">
+                        
+                        <!-- iPHONE 16 NORMAL -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/16_colores.png" alt="iPhone 16"></div>
+                            <h3>iPhone 16</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/2626.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-16')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 16 de 128GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/16_colores.png" alt="iPhone 16"></div>
+                            <h3>iPhone 16 </h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/3000.5</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-16')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 16 de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 16 PRO -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/16pro_colores.png" alt="iPhone 16 Pro"></div>
+                            <h3>iPhone 16 Pro</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/3328.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-16pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 16 Pro de 512GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/16pro_colores.png" alt="iPhone 16 Pro"></div>
+                            <h3>iPhone 16 Pro</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/3346.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-16pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 16 Pro de 1TB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 16 PRO MAX -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/16pro_colores.png" alt="iPhone 16 Pro Max"></div>
+                            <h3>iPhone 16 Pro Max</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/3800</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-16promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 16 Pro Max de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/16pro_colores.png" alt="iPhone 16 Pro Max"></div>
+                            <h3>iPhone 16 Pro Max</h3>
+                            <div class="capacity">512GB</div>
+                            <div class="price">S/4100</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-16promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 16 Pro Max de 512GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- ================== SERIE 17 ================== -->
+                <div id="serie-17" class="series-container" style="display: none;">
+                    <h2 class="section-subtitle" style="margin-bottom: 2rem;">SERIE 17 DE APPLE</h2>
+                    <div class="grid">
+                        
+                        <!-- iPHONE 17 NORMAL -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/17_colores.png" alt="iPhone 17"></div>
+                            <h3>iPhone 17</h3>
+                            <div class="capacity">128GB</div>
+                            <div class="price">S/2000.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-17')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 17 de 128GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/17_colores.png" alt="iPhone 17"></div>
+                            <h3>iPhone 17 </h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/2846.5</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-17')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 17 de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 17 PRO -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/17pro_colores.png" alt="iPhone 17 Pro"></div>
+                            <h3>iPhone 17 Pro</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/4070.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-17pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 17 Pro de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/17pro_colores.png" alt="iPhone 17 Pro"></div>
+                            <h3>iPhone 17 Pro</h3>
+                            <div class="capacity">512GB</div>
+                            <div class="price">S/4199.0</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-17pro')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 17 Pro de 512GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <!-- iPHONE 17 PRO MAX -->
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/17pro_colores.png" alt="iPhone 17 Pro Max"></div>
+                            <h3>iPhone 17 Pro Max</h3>
+                            <div class="capacity">256GB</div>
+                            <div class="price">S/4900</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-17promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 17 Pro Max de 256GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                        <div class="card">
+                            <div class="img-placeholder"><img src="img/17pro_colores.png" alt="iPhone 17 Pro Max"></div>
+                            <h3>iPhone 17 Pro Max</h3>
+                            <div class="capacity">512GB</div>
+                            <div class="price">S/5146.5</div>
+                            <button class="btn-back" style="padding: 8px 15px; font-size: 0.9rem; margin-bottom: 10px; width: 100%;" onclick="abrirModal('modal-17promax')">Ver Características</button>
+                            <a href="https://wa.me/51914534610?text=Hola, estoy interesado en el iPhone 17 Pro Max de 512GB" target="_blank" class="btn-comprar" style="width: 100%;">Me interesa</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                
+                <div style="margin-top: 4rem; padding-bottom: 2rem; text-align: center;">
+                    <button class="btn-back" onclick="hideModels()">⬅ Volver a las Series</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/51914534610" target="_blank" class="whatsapp-float">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c-.003 1.396.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.005-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+    <!-- ========================================== -->
+    <!-- SECCIÓN DE REFERENCIAS (CINTURÓN 3D) -->
+    <!-- ========================================== -->
+    <section id="referencias" class="references-section">
+        <h2 class="section-title">Nuestras Entregas</h2>
+        <h2 class="section-subtitle">Clientes Felices</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel-3d">
+                <!-- Tarjetas del cinturón (6 imágenes) -->
+                <div class="carousel-item"><img src="img/ref1.jpeg" alt="Referencia 1"></div>
+                <div class="carousel-item"><img src="img/ref2.jpeg" alt="Referencia 2"></div>
+                <div class="carousel-item"><img src="img/ref3.jpeg" alt="Referencia 3"></div>
+                <div class="carousel-item"><img src="img/ref4.jpeg" alt="Referencia 4"></div>
+                <div class="carousel-item"><img src="img/ref5.jpeg" alt="Referencia 5"></div>
+                <div class="carousel-item"><img src="img/ref6.jpeg" alt="Referencia 6"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA COMPLETO -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>GOAT IMPORTS</h3>
+                <p>Traemos lo mejor para ti. Calidad, garantía y exclusividad en cada entrega.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#catalogo">Catálogo</a></li>
+                    <li><a href="https://www.tiktok.com/@goat2imports?lang=es-419" target="_blank">TikTok</a></li>
+                    <li><a href="https://wa.me/51914534610" target="_blank">WhatsApp</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>Lima, Perú</p>
+                <p>Precios sujetos a stock</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 GOAT Imports Perú. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- VENTANA EMERGENTE (MODAL LIQUID GLASS) -->
+    <div id="modal-13" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-13')">✕</button>
+            <img src="img/13_colores.png" alt="iPhone 13">
+            <h3>iPhone 13</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR de 6.1"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A15 Bionic ultra rápido</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de dos cámaras de 12 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.227 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Ceramic Shield, más resistente</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 13" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+    <!-- MODAL: iPHONE 13 PRO -->
+    <div id="modal-13-pro" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-13-pro')">✕</button>
+            <img src="img/13pro_colores.png" alt="iPhone 13 Pro">
+            <h3>iPhone 13 Pro</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i>Pantalla ProMotion 120Hz de 6.1"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A15 Bionic (GPU 5 núcleos)</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de TRES cámaras Pro</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de larga duración</li>
+                <li><i class="fi fi-ts-shield-check"></i> Diseño de acero inoxidable</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 13 Pro" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+    <!-- MODAL: iPHONE 13 PRO MAX -->
+    <div id="modal-13-promax" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-13-promax')">✕</button>
+            <img src="img/13pro_colores.png" alt="iPhone 13 Pro Max">
+            <h3>iPhone 13 Pro Max</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla ProMotion 120Hz de 6.7"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A15 Bionic (GPU 5 núcleos)</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras Pro</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de máxima duración</li>
+                <li><i class="fi fi-ts-shield-check"></i> Diseño de acero inoxidable</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 13 Pro Max" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+       <!-- MODAL: iPhone 14 normal -->
+    <div id="modal-14" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-14')">✕</button>
+            <img src="img/14_colores.png" alt="iPhone 14">
+            <h3>iPhone 14</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR de 6.1"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A15 Bionic ultra rápido</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de dos cámaras de 12 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.279 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Ceramic Shield, más resistente</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 14" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+      <!-- MODAL: iPhone 14 pro  -->
+    <div id="modal-14-pro" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-14-pro')">✕</button>
+            <img src="img/14pro_colores.png" alt="iPhone 14 Pro">
+            <h3>iPhone 14 Pro</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.1"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A16 Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.279 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Acero inoxidable, isla dinámica</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 14 Pro" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+     <!-- MODAL: iPhone 14 pro max  -->
+    <div id="modal-14-promax" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-14-promax')">✕</button>
+            <img src="img/14pro_colores.png" alt="iPhone 14 Pro Max">
+            <h3>iPhone 14 Pro Max</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.7"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A16 Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 4.323 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Acero inoxidable, isla dinámica</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 14 Pro Max" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+     <!-- MODAL: iPhone 15  -->
+    <div id="modal-15" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-15')">✕</button>
+            <img src="img/15_colores.png" alt="iPhone 15">
+            <h3>iPhone 15</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.1"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A16 Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de dos cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.349 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Cuerpo de aluminio con vidrio trasero</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 15" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+    <!-- MODAL: iPhone 15  -->
+    <div id="modal-15" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-15')">✕</button>
+            <img src="img/15_colores.png" alt="iPhone 15">
+            <h3>iPhone 15</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.1"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A16 Bionic 60 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de dos cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.349 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Cuerpo de aluminio con vidrio trasero</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 15" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+    <!-- MODAL: iPhone 15 pro   -->
+    <div id="modal-15pro" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-15pro')">✕</button>
+            <img src="img/15pro_colores.png" alt="iPhone 15 Pro">
+            <h3>iPhone 15 Pro</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.1"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A17 Pro Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.274 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Cristal Ceramic Shield</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 15 Pro" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+     <!-- MODAL: iPhone 15 pro max   -->
+    <div id="modal-15promax" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-15promax')">✕</button>
+            <img src="img/15promax_colores.png" alt="iPhone 15 Pro Max">
+            <h3>iPhone 15 Pro Max</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.7"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A17 Pro Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 4.422 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Chasis fabricado en Titanio de grado 5</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 15 Pro Max" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+
+    <!-- MODAL: iPhone 16  -->
+    <div id="modal-16" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-16')">✕</button>
+            <img src="img/16_colores.png" alt="iPhone 16">
+            <h3>iPhone 16</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.3"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A18 Bionic 60 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de dos cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.561 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> cristal Ceramic Shield de última generación</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 16" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+
+    <!-- MODAL: iPhone 16 pro   -->
+    <div id="modal-16pro" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-16pro')">✕</button>
+            <img src="img/16pro_colores.png" alt="iPhone 16 Pro">
+            <h3>iPhone 16 Pro</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.3"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A18 Pro Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.582 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Chasis fabricado en Titanio de grado 5</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 16 Pro" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+    <!-- MODAL: iPhone 16 pro max   -->
+    <div id="modal-16promax" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-16promax')">✕</button>
+            <img src="img/16pro_colores.png" alt="iPhone 16 Pro Max">
+            <h3>iPhone 16 Pro Max</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.9"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A18 Pro Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 4.685 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> Chasis fabricado en Titanio de grado 5</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 16 Pro Max" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+
+     <!-- MODAL: iPhone 17  -->
+    <div id="modal-17" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-17')">✕</button>
+            <img src="img/17_colores.png" alt="iPhone 17">
+            <h3>iPhone 17</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.3"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A19 Bionic 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de dos cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 3.692 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> cristal Ceramic Shield de última generación</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 17" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+
+     <!-- MODAL: iPhone 17 pro   -->
+    <div id="modal-17pro" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-17pro')">✕</button>
+            <img src="img/17pro_colores.png" alt="iPhone 17 Pro">
+            <h3>iPhone 17 Pro</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.3"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A19 Pro Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 4.252 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> cristal reforzado Ceramic Shield 2</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 17 Pro" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+
+    <!-- MODAL: iPhone 17 pro max   -->
+    <div id="modal-17promax" class="modal-overlay">
+        <div class="modal-glass">
+            <button class="close-btn" onclick="cerrarModal('modal-17promax')">✕</button>
+            <img src="img/17pro_colores.png" alt="iPhone 17 Pro Max">
+            <h3>iPhone 17 Pro Max</h3>
+            <ul class="modal-features">
+                <li><i class="fi fi-tr-mobile-button"></i> Pantalla Super Retina XDR OLED de 6.9"</li>
+                <li><i class="fi fi-tr-microchip"></i> Chip A19 Pro Bionic ProMotion 120 Hz</li>
+                <li><i class="fi fi-ts-camera"></i> Sistema de tres cámaras de 48 MP</li>
+                <li><i class="fi fi-tr-battery-full"></i> Batería de 5.088 mAh</li>
+                <li><i class="fi fi-ts-shield-check"></i> cristal reforzado Ceramic Shield 2</li>
+            </ul>
+            <a href="https://wa.me/51914534610?text=Hola, quiero el iPhone 17 Pro Max" target="_blank" class="btn-comprar" style="width: 100%;">Comprar Ahora</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
